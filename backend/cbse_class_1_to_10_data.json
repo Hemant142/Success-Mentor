@@ -1,0 +1,288 @@
+{
+  "classes": [
+    { "_id": "class_1", "name": "Class 1", "description": "CBSE Class 1 standard curriculum.", "class_url": "/classes/class-1" },
+    { "_id": "class_2", "name": "Class 2", "description": "CBSE Class 2 standard curriculum.", "class_url": "/classes/class-2" },
+    { "_id": "class_3", "name": "Class 3", "description": "CBSE Class 3 standard curriculum.", "class_url": "/classes/class-3" },
+    { "_id": "class_4", "name": "Class 4", "description": "CBSE Class 4 standard curriculum.", "class_url": "/classes/class-4" },
+    { "_id": "class_5", "name": "Class 5", "description": "CBSE Class 5 standard curriculum.", "class_url": "/classes/class-5" },
+    { "_id": "class_6", "name": "Class 6", "description": "CBSE Class 6 standard curriculum.", "class_url": "/classes/class-6" },
+    { "_id": "class_7", "name": "Class 7", "description": "CBSE Class 7 standard curriculum.", "class_url": "/classes/class-7" },
+    { "_id": "class_8", "name": "Class 8", "description": "CBSE Class 8 standard curriculum.", "class_url": "/classes/class-8" },
+    { "_id": "class_9", "name": "Class 9", "description": "CBSE Class 9 standard curriculum.", "class_url": "/classes/class-9" },
+    { "_id": "class_10", "name": "Class 10", "description": "CBSE Class 10 standard curriculum.", "class_url": "/classes/class-10" }
+  ],
+  "subjects": [
+    // Classes 1-5: English, Hindi, Mathematics, EVS
+    { "_id": "class_1_subject_1", "name": "English", "class_id": "class_1", "subject_url": "/subjects/class-1-english" },
+    { "_id": "class_1_subject_2", "name": "Hindi", "class_id": "class_1", "subject_url": "/subjects/class-1-hindi" },
+    { "_id": "class_1_subject_3", "name": "Mathematics", "class_id": "class_1", "subject_url": "/subjects/class-1-mathematics" },
+    { "_id": "class_1_subject_4", "name": "EVS", "class_id": "class_1", "subject_url": "/subjects/class-1-evs" },
+
+    { "_id": "class_2_subject_1", "name": "English", "class_id": "class_2", "subject_url": "/subjects/class-2-english" },
+    { "_id": "class_2_subject_2", "name": "Hindi", "class_id": "class_2", "subject_url": "/subjects/class-2-hindi" },
+    { "_id": "class_2_subject_3", "name": "Mathematics", "class_id": "class_2", "subject_url": "/subjects/class-2-mathematics" },
+    { "_id": "class_2_subject_4", "name": "EVS", "class_id": "class_2", "subject_url": "/subjects/class-2-evs" },
+
+    { "_id": "class_3_subject_1", "name": "English", "class_id": "class_3", "subject_url": "/subjects/class-3-english" },
+    { "_id": "class_3_subject_2", "name": "Hindi", "class_id": "class_3", "subject_url": "/subjects/class-3-hindi" },
+    { "_id": "class_3_subject_3", "name": "Mathematics", "class_id": "class_3", "subject_url": "/subjects/class-3-mathematics" },
+    { "_id": "class_3_subject_4", "name": "EVS", "class_id": "class_3", "subject_url": "/subjects/class-3-evs" },
+
+    { "_id": "class_4_subject_1", "name": "English", "class_id": "class_4", "subject_url": "/subjects/class-4-english" },
+    { "_id": "class_4_subject_2", "name": "Hindi", "class_id": "class_4", "subject_url": "/subjects/class-4-hindi" },
+    { "_id": "class_4_subject_3", "name": "Mathematics", "class_id": "class_4", "subject_url": "/subjects/class-4-mathematics" },
+    { "_id": "class_4_subject_4", "name": "EVS", "class_id": "class_4", "subject_url": "/subjects/class-4-evs" },
+
+    { "_id": "class_5_subject_1", "name": "English", "class_id": "class_5", "subject_url": "/subjects/class-5-english" },
+    { "_id": "class_5_subject_2", "name": "Hindi", "class_id": "class_5", "subject_url": "/subjects/class-5-hindi" },
+    { "_id": "class_5_subject_3", "name": "Mathematics", "class_id": "class_5", "subject_url": "/subjects/class-5-mathematics" },
+    { "_id": "class_5_subject_4", "name": "EVS", "class_id": "class_5", "subject_url": "/subjects/class-5-evs" },
+    { "_id": "class_5_subject_5", "name": "Science", "class_id": "class_5", "subject_url": "/subjects/class-5-science" },
+
+    // Classes 6-8: English, Hindi, Mathematics, Science, Social Science, Sanskrit/Regional
+    { "_id": "class_6_subject_1", "name": "English", "class_id": "class_6", "subject_url": "/subjects/class-6-english" },
+    { "_id": "class_6_subject_2", "name": "Hindi", "class_id": "class_6", "subject_url": "/subjects/class-6-hindi" },
+    { "_id": "class_6_subject_3", "name": "Mathematics", "class_id": "class_6", "subject_url": "/subjects/class-6-mathematics" },
+    { "_id": "class_6_subject_4", "name": "Science", "class_id": "class_6", "subject_url": "/subjects/class-6-science" },
+    { "_id": "class_6_subject_5", "name": "Social Science", "class_id": "class_6", "subject_url": "/subjects/class-6-social-science" },
+    { "_id": "class_6_subject_6", "name": "Sanskrit", "class_id": "class_6", "subject_url": "/subjects/class-6-sanskrit" },
+
+    { "_id": "class_7_subject_1", "name": "English", "class_id": "class_7", "subject_url": "/subjects/class-7-english" },
+    { "_id": "class_7_subject_2", "name": "Hindi", "class_id": "class_7", "subject_url": "/subjects/class-7-hindi" },
+    { "_id": "class_7_subject_3", "name": "Mathematics", "class_id": "class_7", "subject_url": "/subjects/class-7-mathematics" },
+    { "_id": "class_7_subject_4", "name": "Science", "class_id": "class_7", "subject_url": "/subjects/class-7-science" },
+    { "_id": "class_7_subject_5", "name": "Social Science", "class_id": "class_7", "subject_url": "/subjects/class-7-social-science" },
+    { "_id": "class_7_subject_6", "name": "Sanskrit", "class_id": "class_7", "subject_url": "/subjects/class-7-sanskrit" },
+
+    { "_id": "class_8_subject_1", "name": "English", "class_id": "class_8", "subject_url": "/subjects/class-8-english" },
+    { "_id": "class_8_subject_2", "name": "Hindi", "class_id": "class_8", "subject_url": "/subjects/class-8-hindi" },
+    { "_id": "class_8_subject_3", "name": "Mathematics", "class_id": "class_8", "subject_url": "/subjects/class-8-mathematics" },
+    { "_id": "class_8_subject_4", "name": "Science", "class_id": "class_8", "subject_url": "/subjects/class-8-science" },
+    { "_id": "class_8_subject_5", "name": "Social Science", "class_id": "class_8", "subject_url": "/subjects/class-8-social-science" },
+    { "_id": "class_8_subject_6", "name": "Sanskrit", "class_id": "class_8", "subject_url": "/subjects/class-8-sanskrit" },
+
+    // Classes 9-10: English, Hindi, Mathematics, Science, Social Science, Sanskrit/Regional, IT (optional)
+    { "_id": "class_9_subject_1", "name": "English (Language & Literature)", "class_id": "class_9", "subject_url": "/subjects/class-9-english" },
+    { "_id": "class_9_subject_2", "name": "Hindi (Course A/B)", "class_id": "class_9", "subject_url": "/subjects/class-9-hindi" },
+    { "_id": "class_9_subject_3", "name": "Mathematics", "class_id": "class_9", "subject_url": "/subjects/class-9-mathematics" },
+    { "_id": "class_9_subject_4", "name": "Science", "class_id": "class_9", "subject_url": "/subjects/class-9-science" },
+    { "_id": "class_9_subject_5", "name": "Social Science", "class_id": "class_9", "subject_url": "/subjects/class-9-social-science" },
+    { "_id": "class_9_subject_6", "name": "Sanskrit", "class_id": "class_9", "subject_url": "/subjects/class-9-sanskrit" },
+    { "_id": "class_9_subject_7", "name": "Information Technology", "class_id": "class_9", "subject_url": "/subjects/class-9-it" },
+
+    { "_id": "class_10_subject_1", "name": "English (Language & Literature)", "class_id": "class_10", "subject_url": "/subjects/class-10-english" },
+    { "_id": "class_10_subject_2", "name": "Hindi (Course A/B)", "class_id": "class_10", "subject_url": "/subjects/class-10-hindi" },
+    { "_id": "class_10_subject_3", "name": "Mathematics", "class_id": "class_10", "subject_url": "/subjects/class-10-mathematics" },
+    { "_id": "class_10_subject_4", "name": "Science", "class_id": "class_10", "subject_url": "/subjects/class-10-science" },
+    { "_id": "class_10_subject_5", "name": "Social Science", "class_id": "class_10", "subject_url": "/subjects/class-10-social-science" },
+    { "_id": "class_10_subject_6", "name": "Sanskrit", "class_id": "class_10", "subject_url": "/subjects/class-10-sanskrit" },
+    { "_id": "class_10_subject_7", "name": "Information Technology", "class_id": "class_10", "subject_url": "/subjects/class-10-it" }
+  ],
+
+  "syllabus": [
+    {
+      "subject_id": "class_1_subject_1",
+      "syllabus_url": "/syllabus/class-1-english.pdf"
+    },
+    {
+      "subject_id": "class_1_subject_2",
+      "syllabus_url": "/syllabus/class-1-mathematics.pdf"
+    },
+    {
+      "subject_id": "class_1_subject_3",
+      "syllabus_url": "/syllabus/class-1-evs.pdf"
+    },
+    {
+      "subject_id": "class_1_subject_4",
+      "syllabus_url": "/syllabus/class-1-hindi.pdf"
+    },
+    {
+      "subject_id": "class_2_subject_1",
+      "syllabus_url": "/syllabus/class-2-english.pdf"
+    },
+    {
+      "subject_id": "class_2_subject_2",
+      "syllabus_url": "/syllabus/class-2-mathematics.pdf"
+    },
+    {
+      "subject_id": "class_2_subject_3",
+      "syllabus_url": "/syllabus/class-2-evs.pdf"
+    },
+    {
+      "subject_id": "class_2_subject_4",
+      "syllabus_url": "/syllabus/class-2-hindi.pdf"
+    },
+    {
+      "subject_id": "class_3_subject_1",
+      "syllabus_url": "/syllabus/class-3-english.pdf"
+    },
+    {
+      "subject_id": "class_3_subject_2",
+      "syllabus_url": "/syllabus/class-3-mathematics.pdf"
+    },
+    {
+      "subject_id": "class_3_subject_3",
+      "syllabus_url": "/syllabus/class-3-evs.pdf"
+    },
+    {
+      "subject_id": "class_3_subject_4",
+      "syllabus_url": "/syllabus/class-3-hindi.pdf"
+    },
+    {
+      "subject_id": "class_4_subject_1",
+      "syllabus_url": "/syllabus/class-4-english.pdf"
+    },
+    {
+      "subject_id": "class_4_subject_2",
+      "syllabus_url": "/syllabus/class-4-mathematics.pdf"
+    },
+    {
+      "subject_id": "class_4_subject_3",
+      "syllabus_url": "/syllabus/class-4-evs.pdf"
+    },
+    {
+      "subject_id": "class_4_subject_4",
+      "syllabus_url": "/syllabus/class-4-hindi.pdf"
+    },
+    {
+      "subject_id": "class_5_subject_1",
+      "syllabus_url": "/syllabus/class-5-english.pdf"
+    },
+    {
+      "subject_id": "class_5_subject_2",
+      "syllabus_url": "/syllabus/class-5-mathematics.pdf"
+    },
+    {
+      "subject_id": "class_5_subject_3",
+      "syllabus_url": "/syllabus/class-5-evs.pdf"
+    },
+    {
+      "subject_id": "class_5_subject_4",
+      "syllabus_url": "/syllabus/class-5-hindi.pdf"
+    },
+    {
+      "subject_id": "class_5_subject_5",
+      "syllabus_url": "/syllabus/class-5-science.pdf"
+    },
+    {
+      "subject_id": "class_6_subject_1",
+      "syllabus_url": "/syllabus/class-6-english.pdf"
+    },
+    {
+      "subject_id": "class_6_subject_2",
+      "syllabus_url": "/syllabus/class-6-mathematics.pdf"
+    },
+    {
+      "subject_id": "class_6_subject_3",
+      "syllabus_url": "/syllabus/class-6-science.pdf"
+    },
+    {
+      "subject_id": "class_6_subject_4",
+      "syllabus_url": "/syllabus/class-6-social-science.pdf"
+    },
+    {
+      "subject_id": "class_6_subject_5",
+      "syllabus_url": "/syllabus/class-6-hindi.pdf"
+    },
+    {
+      "subject_id": "class_6_subject_6",
+      "syllabus_url": "/syllabus/class-6-sanskrit.pdf"
+    },
+    {
+      "subject_id": "class_7_subject_1",
+      "syllabus_url": "/syllabus/class-7-english.pdf"
+    },
+    {
+      "subject_id": "class_7_subject_2",
+      "syllabus_url": "/syllabus/class-7-mathematics.pdf"
+    },
+    {
+      "subject_id": "class_7_subject_3",
+      "syllabus_url": "/syllabus/class-7-science.pdf"
+    },
+    {
+      "subject_id": "class_7_subject_4",
+      "syllabus_url": "/syllabus/class-7-social-science.pdf"
+    },
+    {
+      "subject_id": "class_7_subject_5",
+      "syllabus_url": "/syllabus/class-7-hindi.pdf"
+    },
+    {
+      "subject_id": "class_7_subject_6",
+      "syllabus_url": "/syllabus/class-7-sanskrit.pdf"
+    },
+    {
+      "subject_id": "class_8_subject_1",
+      "syllabus_url": "/syllabus/class-8-english.pdf"
+    },
+    {
+      "subject_id": "class_8_subject_2",
+      "syllabus_url": "/syllabus/class-8-mathematics.pdf"
+    },
+    {
+      "subject_id": "class_8_subject_3",
+      "syllabus_url": "/syllabus/class-8-science.pdf"
+    },
+    {
+      "subject_id": "class_8_subject_4",
+      "syllabus_url": "/syllabus/class-8-social-science.pdf"
+    },
+    {
+      "subject_id": "class_8_subject_5",
+      "syllabus_url": "/syllabus/class-8-hindi.pdf"
+    },
+    {
+      "subject_id": "class_8_subject_6",
+      "syllabus_url": "/syllabus/class-8-sanskrit.pdf"
+    },
+    {
+      "subject_id": "class_9_subject_1",
+      "syllabus_url": "/syllabus/class-9-english.pdf"
+    },
+    {
+      "subject_id": "class_9_subject_2",
+      "syllabus_url": "/syllabus/class-9-mathematics.pdf"
+    },
+    {
+      "subject_id": "class_9_subject_3",
+      "syllabus_url": "/syllabus/class-9-science.pdf"
+    },
+    {
+      "subject_id": "class_9_subject_4",
+      "syllabus_url": "/syllabus/class-9-social-science.pdf"
+    },
+    {
+      "subject_id": "class_9_subject_5",
+      "syllabus_url": "/syllabus/class-9-hindi.pdf"
+    },
+    {
+      "subject_id": "class_9_subject_6",
+      "syllabus_url": "/syllabus/class-9-sanskrit.pdf"
+    },
+    {
+      "subject_id": "class_10_subject_1",
+      "syllabus_url": "/syllabus/class-10-english.pdf"
+    },
+    {
+      "subject_id": "class_10_subject_2",
+      "syllabus_url": "/syllabus/class-10-mathematics.pdf"
+    },
+    {
+      "subject_id": "class_10_subject_3",
+      "syllabus_url": "/syllabus/class-10-science.pdf"
+    },
+    {
+      "subject_id": "class_10_subject_4",
+      "syllabus_url": "/syllabus/class-10-social-science.pdf"
+    },
+    {
+      "subject_id": "class_10_subject_5",
+      "syllabus_url": "/syllabus/class-10-hindi.pdf"
+    },
+    {
+      "subject_id": "class_10_subject_6",
+      "syllabus_url": "/syllabus/class-10-sanskrit.pdf"
+    }
+  ]
+}

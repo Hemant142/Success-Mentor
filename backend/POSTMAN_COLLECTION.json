@@ -1,0 +1,629 @@
+{
+  "info": {
+    "_postman_id": "success-mentor-api-collection-v1",
+    "name": "Success Mentor API Collection",
+    "description": "Complete API suite for Success Mentor (Classes 1 to 10 Education & Coaching Institute Management Platform)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080/api",
+      "type": "string"
+    },
+    {
+      "key": "adminToken",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "teacherToken",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "parentToken",
+      "value": "",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "1. Authentication",
+      "item": [
+        {
+          "name": "Login - Admin",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "var jsonData = pm.response.json();",
+                  "if (jsonData.success && jsonData.data.token) {",
+                  "    pm.collectionVariables.set('adminToken', jsonData.data.token);",
+                  "    console.log('Admin token saved');",
+                  "}"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"admin@successmentor.com\",\n  \"password\": \"adminpassword123\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/auth/login",
+              "host": ["{{baseUrl}}"],
+              "path": ["auth", "login"]
+            }
+          }
+        },
+        {
+          "name": "Login - Teacher",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "var jsonData = pm.response.json();",
+                  "if (jsonData.success && jsonData.data.token) {",
+                  "    pm.collectionVariables.set('teacherToken', jsonData.data.token);",
+                  "    console.log('Teacher token saved');",
+                  "}"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"rajesh@successmentor.com\",\n  \"password\": \"teacherpassword123\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/auth/login",
+              "host": ["{{baseUrl}}"],
+              "path": ["auth", "login"]
+            }
+          }
+        },
+        {
+          "name": "Login - Parent",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "var jsonData = pm.response.json();",
+                  "if (jsonData.success && jsonData.data.token) {",
+                  "    pm.collectionVariables.set('parentToken', jsonData.data.token);",
+                  "    console.log('Parent token saved');",
+                  "}"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"parent@successmentor.com\",\n  \"password\": \"parentpassword123\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/auth/login",
+              "host": ["{{baseUrl}}"],
+              "path": ["auth", "login"]
+            }
+          }
+        },
+        {
+          "name": "Get Authenticated Profile (Me)",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/auth/me",
+              "host": ["{{baseUrl}}"],
+              "path": ["auth", "me"]
+            }
+          }
+        },
+        {
+          "name": "Register New Institute + Admin",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"institute_name\": \"Excel Coaching Academy\",\n  \"admin_name\": \"Vikram Malhotra\",\n  \"email\": \"vikram.malhotra@excelcoaching.com\",\n  \"phone\": \"9876543299\",\n  \"password\": \"adminpass123\",\n  \"city\": \"Delhi NCR\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/auth/register-institute",
+              "host": ["{{baseUrl}}"],
+              "path": ["auth", "register-institute"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "2. Public Discovery & Admission Flow",
+      "item": [
+        {
+          "name": "Get All Classes (Classes 1-10)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/public/classes",
+              "host": ["{{baseUrl}}"],
+              "path": ["public", "classes"]
+            }
+          }
+        },
+        {
+          "name": "Get All Subjects",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/public/subjects",
+              "host": ["{{baseUrl}}"],
+              "path": ["public", "subjects"]
+            }
+          }
+        },
+        {
+          "name": "Get Subjects Filtered by Class (Class 10)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/public/subjects?class_id=class_10",
+              "host": ["{{baseUrl}}"],
+              "path": ["public", "subjects"],
+              "query": [
+                {
+                  "key": "class_id",
+                  "value": "class_10"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get Course / Class 10 Details with Syllabus",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/public/courses/class_10",
+              "host": ["{{baseUrl}}"],
+              "path": ["public", "courses", "class_10"]
+            }
+          }
+        },
+        {
+          "name": "Get Faculty Directory",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/public/teachers",
+              "host": ["{{baseUrl}}"],
+              "path": ["public", "teachers"]
+            }
+          }
+        },
+        {
+          "name": "Get Institute Overview & Stats",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/public/institute",
+              "host": ["{{baseUrl}}"],
+              "path": ["public", "institute"]
+            }
+          }
+        },
+        {
+          "name": "Submit Public Admission Inquiry",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"parent_name\": \"Manoj Gupta\",\n  \"parent_phone\": \"9871234567\",\n  \"parent_email\": \"manoj.gupta@example.com\",\n  \"parent_address\": \"Sector 15, Block C\",\n  \"student_name\": \"Rohan Gupta\",\n  \"student_class\": 10,\n  \"school_name\": \"Delhi Public School\",\n  \"preferred_batch_timing\": \"EVENING\",\n  \"remarks\": \"Interested in Class 10 Maths & Science batch\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/public/enroll",
+              "host": ["{{baseUrl}}"],
+              "path": ["public", "enroll"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "3. Admin Management & Inquiries",
+      "item": [
+        {
+          "name": "Get All Admission Inquiries",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/enrollments",
+              "host": ["{{baseUrl}}"],
+              "path": ["enrollments"]
+            }
+          }
+        },
+        {
+          "name": "Get Pending Inquiries",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/enrollments?status=PENDING",
+              "host": ["{{baseUrl}}"],
+              "path": ["enrollments"],
+              "query": [
+                {
+                  "key": "status",
+                  "value": "PENDING"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Approve Inquiry & Auto-Enroll Student to Batch",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"batch_id\": \"\",\n  \"remarks\": \"Approved and enrolled in evening batch\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/enrollments/:inquiryId/approve",
+              "host": ["{{baseUrl}}"],
+              "path": ["enrollments", ":inquiryId", "approve"],
+              "variable": [
+                {
+                  "key": "inquiryId",
+                  "value": "REPLACE_WITH_ENROLLMENT_ID"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "4. Batches & Schedules",
+      "item": [
+        {
+          "name": "Get All Active Batches",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/batches",
+              "host": ["{{baseUrl}}"],
+              "path": ["batches"]
+            }
+          }
+        },
+        {
+          "name": "Create New Batch",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Class 10 - Mathematics Weekend Champions\",\n  \"class_number\": 10,\n  \"subject_ids\": [\"class_10_subject_3\"],\n  \"monthly_fee\": 3200,\n  \"max_capacity\": 25,\n  \"schedule\": [\n    {\n      \"day\": \"SAT\",\n      \"start_time\": \"09:00\",\n      \"end_time\": \"11:00\",\n      \"room\": \"Room 101\"\n    },\n    {\n      \"day\": \"SUN\",\n      \"start_time\": \"09:00\",\n      \"end_time\": \"11:00\",\n      \"room\": \"Room 101\"\n    }\n  ]\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/batches",
+              "host": ["{{baseUrl}}"],
+              "path": ["batches"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "5. Teacher Daily Workflow",
+      "item": [
+        {
+          "name": "Save Batch Attendance (with Timestamps)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{teacherToken}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"batch_id\": \"REPLACE_WITH_BATCH_ID\",\n  \"date\": \"2026-09-19\",\n  \"subject_id\": \"class_9_subject_3\",\n  \"topic_covered\": \"Quadratic Equations: Nature of Roots\",\n  \"records\": [\n    {\n      \"student_id\": \"REPLACE_WITH_STUDENT_ID\",\n      \"status\": \"PRESENT\",\n      \"check_in_time\": \"16:58\",\n      \"remarks\": \"Active in solving algebra questions\"\n    }\n  ]\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/attendance/mark",
+              "host": ["{{baseUrl}}"],
+              "path": ["attendance", "mark"]
+            }
+          }
+        },
+        {
+          "name": "Get Syllabus for Subject (Maths)",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{teacherToken}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/syllabus/subject/class_10_subject_3",
+              "host": ["{{baseUrl}}"],
+              "path": ["syllabus", "subject", "class_10_subject_3"]
+            }
+          }
+        },
+        {
+          "name": "Toggle Syllabus Topic Completed",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{teacherToken}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"topicName\": \"Nature of Roots\",\n  \"is_completed\": true\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/syllabus/subject/class_10_subject_3/topic",
+              "host": ["{{baseUrl}}"],
+              "path": ["syllabus", "subject", "class_10_subject_3", "topic"]
+            }
+          }
+        },
+        {
+          "name": "Create Unit Test",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{teacherToken}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"batch_id\": \"REPLACE_WITH_BATCH_ID\",\n  \"subject_id\": \"class_9_subject_3\",\n  \"title\": \"Class 9 Unit Test 2 - Algebraic Expressions\",\n  \"exam_date\": \"2026-09-22\",\n  \"total_marks\": 50,\n  \"passing_marks\": 18,\n  \"syllabus_topics\": [\"Polynomials\", \"Factorization\"]\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/exams",
+              "host": ["{{baseUrl}}"],
+              "path": ["exams"]
+            }
+          }
+        },
+        {
+          "name": "Submit & Publish Unit Test Results",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{teacherToken}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"results\": [\n    {\n      \"student_id\": \"REPLACE_WITH_STUDENT_ID\",\n      \"marks_obtained\": 48,\n      \"is_absent\": false,\n      \"remarks\": \"Outstanding problem-solving accuracy\"\n    }\n  ]\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/exams/:examId/results",
+              "host": ["{{baseUrl}}"],
+              "path": ["exams", ":examId", "results"],
+              "variable": [
+                {
+                  "key": "examId",
+                  "value": "REPLACE_WITH_EXAM_ID"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "6. Parent Visibility Portal",
+      "item": [
+        {
+          "name": "Get Parent Children List",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{parentToken}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/parent/children",
+              "host": ["{{baseUrl}}"],
+              "path": ["parent", "children"]
+            }
+          }
+        },
+        {
+          "name": "Get Child 360 Overview (Live Attendance + Syllabus + Scores)",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{parentToken}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/parent/child/:studentId/overview",
+              "host": ["{{baseUrl}}"],
+              "path": ["parent", "child", ":studentId", "overview"],
+              "variable": [
+                {
+                  "key": "studentId",
+                  "value": "REPLACE_WITH_STUDENT_ID"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get Child Today Live Check-in Status",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{parentToken}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/attendance/student/:studentId/today",
+              "host": ["{{baseUrl}}"],
+              "path": ["attendance", "student", ":studentId", "today"],
+              "variable": [
+                {
+                  "key": "studentId",
+                  "value": "REPLACE_WITH_STUDENT_ID"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get Child Test Scorecards",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{parentToken}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/exams/student/:studentId/results",
+              "host": ["{{baseUrl}}"],
+              "path": ["exams", "student", ":studentId", "results"],
+              "variable": [
+                {
+                  "key": "studentId",
+                  "value": "REPLACE_WITH_STUDENT_ID"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
