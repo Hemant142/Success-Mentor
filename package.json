@@ -1,0 +1,16 @@
+{
+  "name": "success-mentor",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Success Mentor Institute Management Platform",
+  "scripts": {
+    "check": "npm run check:frontend",
+    "check:frontend": "npm --prefix frontend run check",
+    "lint": "npm run lint:frontend",
+    "lint:frontend": "npm --prefix frontend run lint",
+    "lint:fix": "npm --prefix frontend run lint:fix",
+    "build": "npm --prefix frontend run build",
+    "start:frontend": "npm --prefix frontend start",
+    "start:backend": "npm --prefix backend start"
+  }
+}
